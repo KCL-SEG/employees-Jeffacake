@@ -24,16 +24,22 @@ class Employee:
         return pay
 
     def __str__(self):
-        string = f'{self.name} works on '
+        string = f'{self.name} works on'
+        components = []
+
         if self.salaryRate:
-            string += f'a monthly salary of {self.salaryRate} '
+            components.append(f'a monthly salary of {self.salaryRate}')
         if self.hourlyRate:
-            string += f'a contract of {self.hours} hours at {self.hourlyRate}/hour'
+            components.append(f'a contract of {self.hours} hours at {self.hourlyRate}/hour')
         if self.contractCommissionNum and self.contractCommissionRate:
-            string += f'and receives commission for {self.contractCommissionNum} contract(s) at {self.contractCommissionRate}/contract'
-        if self.bonusCommission :
-            string += f'and receives a bonus commission of {self.bonusCommission}'
+            components.append(f'commission for {self.contractCommissionNum} contract(s) at {self.contractCommissionRate}/contract')
+        if self.bonusCommission:
+            components.append(f'a bonus commission of {self.bonusCommission}')
+
+        if components:
+            string += ' ' + ' and '.join(components)
         string += f'. Their total pay is {self.get_pay()}.'
+
         return string
 
 
