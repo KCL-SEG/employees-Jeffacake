@@ -32,9 +32,9 @@ class Employee:
         if self.hourlyRate:
             components.append(f'a contract of {self.hours} hours at {self.hourlyRate}/hour')
         if self.contractCommissionNum and self.contractCommissionRate:
-            components.append(f'commission for {self.contractCommissionNum} contract(s) at {self.contractCommissionRate}/contract')
+            components.append(f'receives a commission for {self.contractCommissionNum} contract(s) at {self.contractCommissionRate}/contract')
         if self.bonusCommission:
-            components.append(f'a bonus commission of {self.bonusCommission}')
+            components.append(f'receives a bonus commission of {self.bonusCommission}')
 
         if components:
             string += ' ' + ' and '.join(components)
