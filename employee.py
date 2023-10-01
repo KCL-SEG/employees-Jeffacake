@@ -26,9 +26,9 @@ class Employee:
     def __str__(self):
         string = f'{self.name} works on '
         if self.salaryRate:
-            string += f'a monthly salary of {self.salaryRate} '
+            string += f'a monthly salary of {self.salaryRate}. '
         if self.hourlyRate:
-            string += f'a contract of {self.hours} at {self.hourlyRate}/hour '
+            string += f'a contract of {self.hours} at {self.hourlyRate}/hour. '
         if self.contractCommissionNum and self.contractCommissionRate:
             string += f'and receives commission for {self.contractCommissionNum} contract(s) at {self.contractCommissionRate}/contract. '
         if self.bonusCommission :
